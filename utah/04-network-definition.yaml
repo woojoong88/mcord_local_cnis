@@ -54,9 +54,9 @@ spec:
         "type": "centralip",
         "ipType": "cluster",
         "etcdURL": "http://127.0.0.1:31079",
-        "network": "13.1.1.0/24",
-        "subnetMin": "13.1.1.2",
-        "subnetMax": "13.1.1.100",
-        "gateway" : "13.1.1.254"
+        "network": "116.1.1.0/24",
+        "subnetMin": "116.1.1.2",
+        "subnetMax": "116.1.1.100",
+        "gateway" : "116.1.1.254"
     }
 }'
