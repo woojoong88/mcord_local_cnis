@@ -1,0 +1,62 @@
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: s1u-net
+  annotations:
+    k8s.v1.cni.cncf.io/resourceName: intel.com/sriov
+spec:
+  config: '{
+    "type": "sriov",
+    "name": "s1u-net",
+    "ipam": {
+        "type": "centralip",
+        "ipType": "cluster",
+        "etcdURL": "http://127.0.0.1:31079",
+        "network": "119.0.0.0/24",
+        "subnetMin": "119.0.0.101",
+        "subnetMax": "119.0.0.200"
+    }
+}'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: sgi-net
+  annotations:
+    k8s.v1.cni.cncf.io/resourceName: intel.com/sriov
+spec:
+  config: '{
+    "type": "sriov",
+    "name": "sgi-net",
+    "ipam": {
+        "type": "centralip",
+        "ipType": "cluster",
+        "etcdURL": "http://127.0.0.1:31079",
+        "network": "13.1.1.0/24",
+        "subnetMin": "13.1.1.2",
+        "subnetMax": "13.1.1.100",
+        "gateway" : "13.1.1.254"
+    }
+}'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: bbu-net
+  annotations:
+    k8s.v1.cni.cncf.io/resourceName: intel.com/sriov
+spec:
+  config: '{
+    "type": "sriov",
+    "name": "bbu-net",
+    "ipam": {
+        "type": "centralip",
+        "ipType": "cluster",
+        "etcdURL": "http://127.0.0.1:31079",
+        "network": "13.1.1.0/24",
+        "subnetMin": "13.1.1.2",
+        "subnetMax": "13.1.1.100",
+        "gateway" : "13.1.1.254"
+    }
+}'
